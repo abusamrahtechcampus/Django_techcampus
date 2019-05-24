@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+
+	{% block title %}{{board.name}} - {{block.super}}{% endblock %}
+
+        {%  block breadcrumb %}
+
+			<li class="breadcrumb-item"><a href="{% url 'index' %}"> Boards</a></li>
+			<li class="breadcrumb-item active">{{board.name}}</li>
+
+
+	    {% endblock %}
+
+
+
+    {% block content %}
+
+    <div class="mb-4">
+    	
+    	<a href="{% url 'new_topic' board.pk %}" class="btn btn-primary">New Topic</a>
+    </div>
+
+    <table class="table" style="border:solid 1PX #CCC">
+			<thead class="thead-inverse">
+				<tr style="border:solid 1PX #CCC;background-color: #385170;color: #fff">
+					<th><a href="#">Topic</a></th>
+					<th><a href="#">Created By</a></th>
+					<th><a href="#">replies</a></th>
+					<th>Created Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for topic in board.topics.all %}
+				<tr>
+					<td>
+						{{topic.supject}}
+					</td>
+					<td>
+						{{topic.Created_by.username}}
+
+					</td>
+					 <td class="align-middle">0</td>
+					 <td class="align-middle">{{topic.Created_dt}}</td>
+					 <td></td>
+					</td>
+				   </tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+    {% endblock %}
+
+
+	
+
+           <footer>
+
+           	Copy Right 2019 &copy; to <a href="https://www.kanzalebda3.com">bigman2055</a>
+           </footer>
+
+
+	
+

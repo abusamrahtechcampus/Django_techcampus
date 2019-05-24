@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Bigman2055">
+	<meta name="keywords" content="HTML,CSS3,XML,JavaScript" >
+	<title>{% block title %} Django Boards {% endblock %}</title>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+</head>
+<body style= "background-color: #ececec">
+<style>
+
+nav{
+	border: 1PX solid;
+	border-radius: 100px 50px;
+	margin-right: 20px;
+	margin-top: 5px;
+}
+nav a{
+	color: white;
+}
+
+	img{
+		float:right;
+		padding-right: 20px;
+	}
+
+	h3{
+		float:left;
+		padding-left: 25px;
+	}
+
+	th a{
+		font-direction: none;
+		color: white;
+	}
+
+
+
+	footer{
+	background-color: #385170;
+	text-align: center;
+	padding: 15px;
+	margin: 20px;
+	color: #ffffff;
+	width: 98%;
+	border-radius: 100px 50px;
+}
+footer a{
+    width: 100%;
+	color:white;
+	direction: none;
+	font-weight: bold;
+
+}
+td a{
+	font-weight: bold;
+}
+table thead tr th{
+	border-radius: 100px 50px;
+}
+
+ol{
+border-radius: 100px 50px;
+
+}
+
+li{
+	text-decoration: none;
+	font-weight: : bold;
+}
+</style>
+
+
+	<nav class="navbar navbar-light" style="background-color: #385170; height: 80px; width: 100%;" >
+  <!-- Navbar content -->
+
+  <h3 style="color: #fff;text-align:center;"><a href="{% url 'index' %}"> Welcom To My Django Project </a></h3>
+  <img src="https://www.kanzalebda3.com/ssss.png" width="70px">
+	</nav>
+	<div class="container">
+		<ol class="breadcrumb my-4"style=" background-color: #bdc3c7;border:solid 1PX #CCC">
+			{%  block breadcrumb %}
+
+			{% endblock %}
+		</ol>
+
+
+    {% block content %}  
+
+    {% endblock %}
+
+	</div>	
+
+		<footer>
+
+           <footer>
+
+           	copy right 2019 &copy; to <a href="https://www.kanzalebda3.com">bigman2055</a>
+           </footer>
+
+
+		</footer>
+</body>
+</html>
+

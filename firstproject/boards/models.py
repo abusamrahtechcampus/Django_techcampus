@@ -10,12 +10,6 @@ class Board(models.Model):
 	def __str__(self):
 		return self.name
 
-
-
-
-
-
-
 class Topic(models.Model):
 	supject = models.CharField(max_length=200)
 	Created_by = models.ForeignKey(User,related_name='topics',on_delete=models.CASCADE)
